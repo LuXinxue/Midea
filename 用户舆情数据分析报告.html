@@ -2,164 +2,165 @@
 <p class="has-line-data" data-line-start="0" data-line-end="1"><img src="https://cn-res.midea.com/etc.clientlibs/mideacn-aem/clientlibs/clientlib-site/resources/img/common/midea-logo-cn.png" alt="alt"></p>
 <h1 class="code-line" data-line-start="1" data-line-end="2"><a id="_1"></a>通过用户舆情数据分析美的</h1>
 <h1 class="code-line" data-line-start="2" data-line-end="3"><a id="_2"></a>在国内以及美国空调市场报告</h1>
-<p class="has-line-data" data-line-start="3" data-line-end="4"><code>python</code> <code>数据分析</code> <code>情感分析</code> <code>关键词分析</code></p>
-<h3 class="code-line" data-line-start="4" data-line-end="5"><a id="1__4"></a>1. 引言</h3>
+<p class="has-line-data" data-line-start="3" data-line-end="5"><img src="https://img.shields.io/badge/Author-%E5%8D%A2%E5%BF%83%E9%9B%AA-brightgreen" alt> <img src="https://img.shields.io/badge/Version-1.0-red" alt><br>
+<code>python</code> <code>数据分析</code> <code>情感分析</code> <code>关键词分析</code></p>
+<h3 class="code-line" data-line-start="5" data-line-end="6"><a id="1__5"></a>1. 引言</h3>
 <hr>
-<p class="has-line-data" data-line-start="6" data-line-end="7">本报告通过分析用户舆情数据，探讨了美的在国内及美国空调市场上的优势和劣势。报告主要通过对国内和美国的主要电商平台（以京东和亚马逊为代表）的产品评价数据进行分析，通过情感分析技术和关键词提取技术获取可用数据信息，主要关注两个市场上的整体情感倾向、市场上关注度较高的产品特性和问题、用户评论中的主要话题和讨论趋势等方面进行了解和分析。</p>
-<h3 class="code-line" data-line-start="8" data-line-end="9"><a id="2__8"></a>2. 数据收集与预处理</h3>
+<p class="has-line-data" data-line-start="7" data-line-end="8">本报告通过分析用户舆情数据，探讨了美的在国内及美国空调市场上的优势和劣势。报告主要通过对国内和美国的主要电商平台（以京东和亚马逊为代表）的产品评价数据进行分析，通过情感分析技术和关键词提取技术获取可用数据信息，主要关注两个市场上的整体情感倾向、市场上关注度较高的产品特性和问题、用户评论中的主要话题和讨论趋势等方面进行了解和分析。</p>
+<h3 class="code-line" data-line-start="9" data-line-end="10"><a id="2__9"></a>2. 数据收集与预处理</h3>
 <hr>
-<p class="has-line-data" data-line-start="10" data-line-end="11">在平台的选择上，我选择了亚马逊美国作为美国市场的代表：</p>
+<p class="has-line-data" data-line-start="11" data-line-end="12">在平台的选择上，我选择了亚马逊美国作为美国市场的代表：</p>
 <pre><code>1. 作为美国是最大的在线零售商有充足的消费群体且覆盖了各年龄层的用户群体、地区和收入水平的消费者，能够保证丰富的数据来源获得对美国市场不同类型消费者的需求和喜好的了解。
 2. 亚马逊的产品页面通常包括详细的产品信息（如规格、特性、价格等），以及销售排名等数据。这些信息可以帮助我更好地了解美的空调在美国市场上的表现。
 3. 亚马逊作为知名电商平台，具有较高的信誉度。用户评论相对真实，可以作为较为可靠的数据来源。
 </code></pre>
-<p class="has-line-data" data-line-start="16" data-line-end="17">京东商城作为中国市场的代表：</p>
+<p class="has-line-data" data-line-start="17" data-line-end="18">京东商城作为中国市场的代表：</p>
 <pre><code>1. 因为其严格的评论审核机制以及与自营产品相关的评论，京东平台的评论通常会更真实、更具价值。
 2. 京东商城的评论会针对产品选择词组供顾客选择评论。因此能够快速的获得频率最高的词组。
 3. 然而由于京东的评论审核机制较严格，一些非常负面的评论可能会被过滤，导致获取的评论数据较为同质化。
 </code></pre>
-<p class="has-line-data" data-line-start="22" data-line-end="23">在产品的选择上，我也没有选择全部的产品，而是利用电商平台上的销售排名选择了销售前三的产品作为数据来源：</p>
+<p class="has-line-data" data-line-start="23" data-line-end="24">在产品的选择上，我也没有选择全部的产品，而是利用电商平台上的销售排名选择了销售前三的产品作为数据来源：</p>
 <pre><code>1. 销量前三的产品通常是该品牌上最受欢迎的产品，通过分析这些产品了解消费者的喜好和需求
 2. 销量较高的产品通常有更多的用户评论和反馈，这保证了丰富的数据来源，有助于深入分析产品的优势和劣势。
 3. 销量前三的产品在很大程度上塑造了品牌的形象，通过分析这些产品我们可以进一步了解品牌在消费者心中的地位，以及品牌的优势和劣势
 </code></pre>
-<p class="has-line-data" data-line-start="28" data-line-end="30">收集到数据后分别对两组数据进行了数据的清洗和预处理：<br>
+<p class="has-line-data" data-line-start="29" data-line-end="31">收集到数据后分别对两组数据进行了数据的清洗和预处理：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1WWaMm6c2YEki7TMwuMH1k_huSOBdrUWn" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="30" data-line-end="33">删除掉了几个相对无关的变量，如’页面网址’,‘PurchasemModel_Color’,‘PurchasemModel_Size’,‘ASIN’<br>
+<p class="has-line-data" data-line-start="31" data-line-end="34">删除掉了几个相对无关的变量，如’页面网址’,‘PurchasemModel_Color’,‘PurchasemModel_Size’,‘ASIN’<br>
 整理并统一了CommentsDate的格式<br>
 对文本数据CommentsContent进行分词、去停用词、拼写纠错等操作</p>
 </blockquote>
-<p class="has-line-data" data-line-start="34" data-line-end="35"><img src="https://drive.google.com/uc?export=view&amp;id=1qb9p3uRcl-Epusk0-v--BVqW_6KADX-r" alt="alt"></p>
+<p class="has-line-data" data-line-start="35" data-line-end="36"><img src="https://drive.google.com/uc?export=view&amp;id=1qb9p3uRcl-Epusk0-v--BVqW_6KADX-r" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="35" data-line-end="38">删除掉了几个相对无关的变量，如’页面网址’,‘商品名称’,‘点赞数’,‘评论数’,‘商品属性’,'页面标题’等<br>
+<p class="has-line-data" data-line-start="36" data-line-end="39">删除掉了几个相对无关的变量，如’页面网址’,‘商品名称’,‘点赞数’,‘评论数’,‘商品属性’,'页面标题’等<br>
 将“评价星级”中的文本“star”去掉，仅保留数字部分<br>
 对文本数据“评价内容”“评价关键词”进行分词、去停用词、拼写纠错等操作</p>
 </blockquote>
-<h3 class="code-line" data-line-start="39" data-line-end="40"><a id="3__39"></a>3. 评价星级分布</h3>
+<h3 class="code-line" data-line-start="40" data-line-end="41"><a id="3__40"></a>3. 评价星级分布</h3>
 <hr>
-<p class="has-line-data" data-line-start="41" data-line-end="42">通过分析两个数据组都有的“评分星级”变量。该变量是用户对商品的整体满意度的直接反映。评价星级通常采用1-5星的评分系统，1星表示非常不满意，5星表示非常满意。这一变量在分析用户舆情数据时具有重要意义：</p>
+<p class="has-line-data" data-line-start="42" data-line-end="43">通过分析两个数据组都有的“评分星级”变量。该变量是用户对商品的整体满意度的直接反映。评价星级通常采用1-5星的评分系统，1星表示非常不满意，5星表示非常满意。这一变量在分析用户舆情数据时具有重要意义：</p>
 <ul>
-<li class="has-line-data" data-line-start="42" data-line-end="43">直观地反映用户对美的空调的<strong>总体满意度</strong>。</li>
-<li class="has-line-data" data-line-start="43" data-line-end="44">通过统计各个星级的评价数量，对美的空调在国内和美国市场上的优劣势进行<strong>定量分析</strong>。<em>例如，如果有较多的5星评价，说明用户认为美的空调具有一定的优势；相反，如果有较多的1星或2星评价，则可能表明产品存在一些劣势。</em></li>
-<li class="has-line-data" data-line-start="44" data-line-end="45">可以用于<strong>筛选具有代表性的评论</strong>，以便进行更深入的文本分析。<em>例如，可以针对高星级（如4星和5星）的评论进行情感分析，了解用户认为美的空调的优势是什么；同时，针对低星级（如1星和2星）的评论进行情感分析，了解美的空调的劣势及潜在问题。（详细分析结果可以看<code>6. 关键词和评分的关系</code>）</em></li>
-<li class="has-line-data" data-line-start="45" data-line-end="47">可以用于分析美的空调在国内和美国市场上的<strong>相对竞争力</strong>。通过与竞争对手的产品评价星级进行比较，可以了解美的空调在市场上的优势和劣势，从而为企业提供有针对性的市场策略建议。</li>
+<li class="has-line-data" data-line-start="43" data-line-end="44">直观地反映用户对美的空调的<strong>总体满意度</strong>。</li>
+<li class="has-line-data" data-line-start="44" data-line-end="45">通过统计各个星级的评价数量，对美的空调在国内和美国市场上的优劣势进行<strong>定量分析</strong>。<em>例如，如果有较多的5星评价，说明用户认为美的空调具有一定的优势；相反，如果有较多的1星或2星评价，则可能表明产品存在一些劣势。</em></li>
+<li class="has-line-data" data-line-start="45" data-line-end="46">可以用于<strong>筛选具有代表性的评论</strong>，以便进行更深入的文本分析。<em>例如，可以针对高星级（如4星和5星）的评论进行情感分析，了解用户认为美的空调的优势是什么；同时，针对低星级（如1星和2星）的评论进行情感分析，了解美的空调的劣势及潜在问题。（详细分析结果可以看<code>6. 关键词和评分的关系</code>）</em></li>
+<li class="has-line-data" data-line-start="46" data-line-end="48">可以用于分析美的空调在国内和美国市场上的<strong>相对竞争力</strong>。通过与竞争对手的产品评价星级进行比较，可以了解美的空调在市场上的优势和劣势，从而为企业提供有针对性的市场策略建议。</li>
 </ul>
-<p class="has-line-data" data-line-start="47" data-line-end="49">亚马逊（美国市场）评价星级分布图：<br>
+<p class="has-line-data" data-line-start="48" data-line-end="50">亚马逊（美国市场）评价星级分布图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1TA8huqMR5pqI9sVrHd-861dq3HZQR7Vl" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="50" data-line-end="51">美国市场中五分评价仅占48%,而一分评价高达接近20%，表明美的空调在美国市场上的满意度较低。美的需要深入研究美国市场的消费者需求和期望，以提高满意度。</p>
+<p class="has-line-data" data-line-start="51" data-line-end="52">美国市场中五分评价仅占48%,而一分评价高达接近20%，表明美的空调在美国市场上的满意度较低。美的需要深入研究美国市场的消费者需求和期望，以提高满意度。</p>
 </blockquote>
-<p class="has-line-data" data-line-start="52" data-line-end="54">京东（中国市场）评价星级分布图：<br>
+<p class="has-line-data" data-line-start="53" data-line-end="55">京东（中国市场）评价星级分布图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1X1ncBSKowC96RW3cW2Jy2mLIZH-IHZ2A" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="54" data-line-end="55">中国市场五分评价占据了87%，表明大多数消费者对美的空调非常满意，这意味着产品质量和性能在国内市场上受到了很高的评价。</p>
+<p class="has-line-data" data-line-start="55" data-line-end="56">中国市场五分评价占据了87%，表明大多数消费者对美的空调非常满意，这意味着产品质量和性能在国内市场上受到了很高的评价。</p>
 </blockquote>
-<h3 class="code-line" data-line-start="58" data-line-end="59"><a id="4__58"></a>4. 情感分析</h3>
+<h3 class="code-line" data-line-start="59" data-line-end="60"><a id="4__59"></a>4. 情感分析</h3>
 <hr>
-<p class="has-line-data" data-line-start="61" data-line-end="62">对预处理后的数据进行情感分析，计算每条评价的情感得分并对评论进行正面、负面、中性的分类，进而得出用户对美的空调在不同方面的总体满意度：</p>
+<p class="has-line-data" data-line-start="62" data-line-end="63">对预处理后的数据进行情感分析，计算每条评价的情感得分并对评论进行正面、负面、中性的分类，进而得出用户对美的空调在不同方面的总体满意度：</p>
 <ul>
-<li class="has-line-data" data-line-start="63" data-line-end="64"><strong>TextBlob</strong>： 美国市场的评论我选择了TextBlob的自然语言处理库作为工具，因为该库主要支持英语的自然语言处理。</li>
-<li class="has-line-data" data-line-start="64" data-line-end="66"><strong>SnowNLP</strong>： 中国市场的评论我选择了SnowNLP的自然语言处理库作为工具，因为该库主要支持中文（简体）的自然语言处理。</li>
+<li class="has-line-data" data-line-start="64" data-line-end="65"><strong>TextBlob</strong>： 美国市场的评论我选择了TextBlob的自然语言处理库作为工具，因为该库主要支持英语的自然语言处理。</li>
+<li class="has-line-data" data-line-start="65" data-line-end="67"><strong>SnowNLP</strong>： 中国市场的评论我选择了SnowNLP的自然语言处理库作为工具，因为该库主要支持中文（简体）的自然语言处理。</li>
 </ul>
-<p class="has-line-data" data-line-start="66" data-line-end="68">亚马逊（美国市场）用户感情倾向分布图：<br>
+<p class="has-line-data" data-line-start="67" data-line-end="69">亚马逊（美国市场）用户感情倾向分布图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1oe7K979bwUr16z-U0r6XLyYbncrorPse" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="68" data-line-end="70">62%的评论为中立，这可能意味着美的空调在美国市场上表现稳定，但没有特别突出的优点或缺点。<br>
+<p class="has-line-data" data-line-start="69" data-line-end="71">62%的评论为中立，这可能意味着美的空调在美国市场上表现稳定，但没有特别突出的优点或缺点。<br>
 32.7%的评论为积极评论，这可能表明美的空调在美国市场上的竞争力不足。可以推测是美的空调品牌知名度较低导致的，美国市场上，美的空调需要面对本土品牌以及其他国际品牌的竞争。这可能导致美的在美国市场上的竞争压力较大。</p>
 </blockquote>
-<p class="has-line-data" data-line-start="72" data-line-end="74">京东商城（中国市场）用户感情倾向分布图：<br>
+<p class="has-line-data" data-line-start="73" data-line-end="75">京东商城（中国市场）用户感情倾向分布图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1ojkEfiM3ikGF8vebbiukkOukZfgi_K6A" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="74" data-line-end="75">60.7%的评论为积极评论表明中国消费者对美的空调的正面看法占了较大比例。显然，美的品牌知名度在中国市场较高，消费者信任度较高。</p>
+<p class="has-line-data" data-line-start="75" data-line-end="76">60.7%的评论为积极评论表明中国消费者对美的空调的正面看法占了较大比例。显然，美的品牌知名度在中国市场较高，消费者信任度较高。</p>
 </blockquote>
-<h3 class="code-line" data-line-start="77" data-line-end="78"><a id="5__77"></a>5. 关键词分析</h3>
+<h3 class="code-line" data-line-start="78" data-line-end="79"><a id="5__78"></a>5. 关键词分析</h3>
 <hr>
-<p class="has-line-data" data-line-start="79" data-line-end="80">对商品评论进行高频关键词提取可以快速地发现用户关注的焦点和产品特性，从而更好地了解产品在市场上的表现。</p>
+<p class="has-line-data" data-line-start="80" data-line-end="81">对商品评论进行高频关键词提取可以快速地发现用户关注的焦点和产品特性，从而更好地了解产品在市场上的表现。</p>
 <ul>
-<li class="has-line-data" data-line-start="80" data-line-end="81"><strong>Spacy</strong>：作为一个针对多种语言的 NLP 库并提供了一整套的 NLP 功能，我用这个库作为美国市场的评论关键词分析工具。</li>
-<li class="has-line-data" data-line-start="81" data-line-end="83"><strong>Jieba</strong>：这是专为中文设计的分词库，因此我用这个自然语言处理库帮助我分析并划分中国市场的评论文本的字词，更快地提取出关键词</li>
+<li class="has-line-data" data-line-start="81" data-line-end="82"><strong>Spacy</strong>：作为一个针对多种语言的 NLP 库并提供了一整套的 NLP 功能，我用这个库作为美国市场的评论关键词分析工具。</li>
+<li class="has-line-data" data-line-start="82" data-line-end="84"><strong>Jieba</strong>：这是专为中文设计的分词库，因此我用这个自然语言处理库帮助我分析并划分中国市场的评论文本的字词，更快地提取出关键词</li>
 </ul>
-<p class="has-line-data" data-line-start="83" data-line-end="85">亚马逊（美国市场）高频关键词词云图：<br>
+<p class="has-line-data" data-line-start="84" data-line-end="86">亚马逊（美国市场）高频关键词词云图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1kUKnQrC9Fzjm1RzdTZEIWk60HS5Pu-BA" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="85" data-line-end="86">美国市场会频繁出现“气温”“室内”等词语，可以推测出美国顾客会在意空调本身的性能。</p>
+<p class="has-line-data" data-line-start="86" data-line-end="87">美国市场会频繁出现“气温”“室内”等词语，可以推测出美国顾客会在意空调本身的性能。</p>
 </blockquote>
-<p class="has-line-data" data-line-start="87" data-line-end="89">京东商城（中国市场）高频关键词词云图：<br>
+<p class="has-line-data" data-line-start="88" data-line-end="90">京东商城（中国市场）高频关键词词云图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1Tjx7hTuC4Fge5LPaCLMoPCxuUB63FQfC" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="89" data-line-end="90">中国市场会频繁出现“安装”“师傅”等词语，不难看出中国顾客会在意空调的整体安装流程。中国市场会频繁出现“安装”“师傅”等词语，不难看出中国顾客会在意空调的整体安装流程。</p>
+<p class="has-line-data" data-line-start="90" data-line-end="91">中国市场会频繁出现“安装”“师傅”等词语，不难看出中国顾客会在意空调的整体安装流程。中国市场会频繁出现“安装”“师傅”等词语，不难看出中国顾客会在意空调的整体安装流程。</p>
 </blockquote>
-<h3 class="code-line" data-line-start="91" data-line-end="92"><a id="6__91"></a>6. 关键词和评分的关系</h3>
-<p class="has-line-data" data-line-start="92" data-line-end="93">高频关键词与评分系统相结合的分析可以揭示用户对产品的真实感受和需求，以及评价星级与评论内容之间的关系，更全面地了解产品在市场上的表现。评分星级系统为用户反馈提供了定量化的度量，而高频关键词则从定性的角度展示了用户的观点。将两者结合可以为美的提供更全面、准确的产品评估。</p>
-<p class="has-line-data" data-line-start="94" data-line-end="96">亚马逊（美国市场）高频关键词和评分星级关系图：<br>
+<h3 class="code-line" data-line-start="92" data-line-end="93"><a id="6__92"></a>6. 关键词和评分的关系</h3>
+<p class="has-line-data" data-line-start="93" data-line-end="94">高频关键词与评分系统相结合的分析可以揭示用户对产品的真实感受和需求，以及评价星级与评论内容之间的关系，更全面地了解产品在市场上的表现。评分星级系统为用户反馈提供了定量化的度量，而高频关键词则从定性的角度展示了用户的观点。将两者结合可以为美的提供更全面、准确的产品评估。</p>
+<p class="has-line-data" data-line-start="95" data-line-end="97">亚马逊（美国市场）高频关键词和评分星级关系图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1YCvAZReFmNlDaxENbkUEZV0LK1WRBeKz" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="96" data-line-end="99">通过图表不难看出：<br>
+<p class="has-line-data" data-line-start="97" data-line-end="100">通过图表不难看出：<br>
 对产品不满意的客户集中提及了“money”、“warranty”、“support”等词语，可以推测大概率是对产品的价格和保修的不满。<br>
 对产品满意的客户则集中提及了“temp”，“quiet”等词语，可以推测是对产品的制冷制热性能和风扇的声音较为满意。</p>
 </blockquote>
-<p class="has-line-data" data-line-start="101" data-line-end="103">京东商城（中国市场）高频关键词和评分星级关系图：<br>
+<p class="has-line-data" data-line-start="102" data-line-end="104">京东商城（中国市场）高频关键词和评分星级关系图：<br>
 <img src="https://drive.google.com/uc?export=view&amp;id=1ecbyp7AyoX418BrHnmT1gAzm_t42bezY" alt="alt"></p>
 <blockquote>
-<p class="has-line-data" data-line-start="103" data-line-end="104">由于京东评分中有大量的五分好评，在探索评论内容关键词与评分的联系时我们不难看出中国顾客对美的的安装服务是满意并且接受的。</p>
+<p class="has-line-data" data-line-start="104" data-line-end="105">由于京东评分中有大量的五分好评，在探索评论内容关键词与评分的联系时我们不难看出中国顾客对美的的安装服务是满意并且接受的。</p>
 </blockquote>
-<h3 class="code-line" data-line-start="105" data-line-end="106"><a id="7__105"></a>7. 总结分析</h3>
-<p class="has-line-data" data-line-start="106" data-line-end="107">中国市场：</p>
+<h3 class="code-line" data-line-start="106" data-line-end="107"><a id="7__106"></a>7. 总结分析</h3>
+<p class="has-line-data" data-line-start="107" data-line-end="108">中国市场：</p>
 <ul>
-<li class="has-line-data" data-line-start="107" data-line-end="112">
-<p class="has-line-data" data-line-start="107" data-line-end="108">优势：</p>
+<li class="has-line-data" data-line-start="108" data-line-end="113">
+<p class="has-line-data" data-line-start="108" data-line-end="109">优势：</p>
 <ul>
-<li class="has-line-data" data-line-start="108" data-line-end="109"><strong>高满意度</strong>：87%的五分评价表明大多数消费者对美的空调非常满意，产品质量和性能在国内市场上受到了很高的评价。</li>
-<li class="has-line-data" data-line-start="109" data-line-end="110"><strong>品牌信任度</strong>：60.7%的积极评论表明中国消费者对美的空调的正面看法占了较大比例，美的品牌知名度在中国市场较高，消费者信任度较高。</li>
-<li class="has-line-data" data-line-start="110" data-line-end="112"><strong>安装服务满意度</strong>：评论关键词分析显示，中国顾客普遍关注并满意美的空调的安装服务。</li>
+<li class="has-line-data" data-line-start="109" data-line-end="110"><strong>高满意度</strong>：87%的五分评价表明大多数消费者对美的空调非常满意，产品质量和性能在国内市场上受到了很高的评价。</li>
+<li class="has-line-data" data-line-start="110" data-line-end="111"><strong>品牌信任度</strong>：60.7%的积极评论表明中国消费者对美的空调的正面看法占了较大比例，美的品牌知名度在中国市场较高，消费者信任度较高。</li>
+<li class="has-line-data" data-line-start="111" data-line-end="113"><strong>安装服务满意度</strong>：评论关键词分析显示，中国顾客普遍关注并满意美的空调的安装服务。</li>
 </ul>
 </li>
-<li class="has-line-data" data-line-start="112" data-line-end="115">
-<p class="has-line-data" data-line-start="112" data-line-end="113">劣势：</p>
+<li class="has-line-data" data-line-start="113" data-line-end="116">
+<p class="has-line-data" data-line-start="113" data-line-end="114">劣势：</p>
 <ul>
-<li class="has-line-data" data-line-start="113" data-line-end="115"><strong>单一市场依赖</strong>：虽然在中国市场表现优秀，但美的空调可能面临过于依赖单一市场的风险。</li>
-</ul>
-</li>
-</ul>
-<p class="has-line-data" data-line-start="115" data-line-end="116">美国市场：</p>
-<ul>
-<li class="has-line-data" data-line-start="116" data-line-end="119">
-<p class="has-line-data" data-line-start="116" data-line-end="117">优势：</p>
-<ul>
-<li class="has-line-data" data-line-start="117" data-line-end="119"><strong>稳定表现</strong>：62%的中立评论可能意味着美的空调在美国市场上表现稳定，但没有特别突出的优点或缺点。</li>
-</ul>
-</li>
-<li class="has-line-data" data-line-start="119" data-line-end="124">
-<p class="has-line-data" data-line-start="119" data-line-end="120">劣势：</p>
-<ul>
-<li class="has-line-data" data-line-start="120" data-line-end="121"><strong>较低满意度</strong>：美国市场中五分评价仅占48%，而一分评价高达接近20%，表明美的空调在美国市场上的满意度较低。</li>
-<li class="has-line-data" data-line-start="121" data-line-end="122"><strong>较低竞争力</strong>：仅有32.7%的评论为积极评论，可能表明美的空调在美国市场上的竞争力不足。原因可能是美的空调品牌知名度较低，需要面对本土品牌以及其他国际品牌的竞争。</li>
-<li class="has-line-data" data-line-start="122" data-line-end="124"><strong>消费者关注点</strong>：美国市场评论中，对产品不满意的客户集中提及了“money”、“warranty”、“support”等词语，可以推测大概率是对产品的价格和保修的不满。同时，美国消费者关注空调本身的性能，如“temperature”和“bedroom”等词语的频繁出现。</li>
+<li class="has-line-data" data-line-start="114" data-line-end="116"><strong>单一市场依赖</strong>：虽然在中国市场表现优秀，但美的空调可能面临过于依赖单一市场的风险。</li>
 </ul>
 </li>
 </ul>
-<p class="has-line-data" data-line-start="124" data-line-end="125">根据以上分析，美的在国内市场的优势主要体现在<strong>较高的品牌知名度、消费者信任度和满意度</strong>。然而，在美国市场上，美的空调面临<strong>较大的竞争压力，满意度较低，并且消费者对产品的价格、保修和支持等方面存在不满</strong>。因此，美的需要在国内市场继续保持优势，同时寻求提高在美国市场的竞争力。</p>
-<h3 class="code-line" data-line-start="126" data-line-end="127"><a id="8__126"></a>8. 报告局限性</h3>
-<p class="has-line-data" data-line-start="127" data-line-end="128">在报告的最后，我需要指出本研究的一些局限性。</p>
+<p class="has-line-data" data-line-start="116" data-line-end="117">美国市场：</p>
+<ul>
+<li class="has-line-data" data-line-start="117" data-line-end="120">
+<p class="has-line-data" data-line-start="117" data-line-end="118">优势：</p>
+<ul>
+<li class="has-line-data" data-line-start="118" data-line-end="120"><strong>稳定表现</strong>：62%的中立评论可能意味着美的空调在美国市场上表现稳定，但没有特别突出的优点或缺点。</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="120" data-line-end="125">
+<p class="has-line-data" data-line-start="120" data-line-end="121">劣势：</p>
+<ul>
+<li class="has-line-data" data-line-start="121" data-line-end="122"><strong>较低满意度</strong>：美国市场中五分评价仅占48%，而一分评价高达接近20%，表明美的空调在美国市场上的满意度较低。</li>
+<li class="has-line-data" data-line-start="122" data-line-end="123"><strong>较低竞争力</strong>：仅有32.7%的评论为积极评论，可能表明美的空调在美国市场上的竞争力不足。原因可能是美的空调品牌知名度较低，需要面对本土品牌以及其他国际品牌的竞争。</li>
+<li class="has-line-data" data-line-start="123" data-line-end="125"><strong>消费者关注点</strong>：美国市场评论中，对产品不满意的客户集中提及了“money”、“warranty”、“support”等词语，可以推测大概率是对产品的价格和保修的不满。同时，美国消费者关注空调本身的性能，如“temperature”和“bedroom”等词语的频繁出现。</li>
+</ul>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="125" data-line-end="126">根据以上分析，美的在国内市场的优势主要体现在<strong>较高的品牌知名度、消费者信任度和满意度</strong>。然而，在美国市场上，美的空调面临<strong>较大的竞争压力，满意度较低，并且消费者对产品的价格、保修和支持等方面存在不满</strong>。因此，美的需要在国内市场继续保持优势，同时寻求提高在美国市场的竞争力。</p>
+<h3 class="code-line" data-line-start="127" data-line-end="128"><a id="8__127"></a>8. 报告局限性</h3>
+<p class="has-line-data" data-line-start="128" data-line-end="129">在报告的最后，我需要指出本研究的一些局限性。</p>
 <ol>
-<li class="has-line-data" data-line-start="128" data-line-end="130">
-<p class="has-line-data" data-line-start="128" data-line-end="129"><strong>评论数据的不完整性</strong>：由于大部分电商网站设有网站防采集技术，可能会导致无法获取全部评论数据或部分数据丢失。因此，无法充分利用评论时间、评分系统和情感倾向来分析用户在近两年的情感变化。这可能影响到对美的空调在国内和美国市场优势和劣势的准确评估。</p>
+<li class="has-line-data" data-line-start="129" data-line-end="131">
+<p class="has-line-data" data-line-start="129" data-line-end="130"><strong>评论数据的不完整性</strong>：由于大部分电商网站设有网站防采集技术，可能会导致无法获取全部评论数据或部分数据丢失。因此，无法充分利用评论时间、评分系统和情感倾向来分析用户在近两年的情感变化。这可能影响到对美的空调在国内和美国市场优势和劣势的准确评估。</p>
 </li>
-<li class="has-line-data" data-line-start="130" data-line-end="132">
-<p class="has-line-data" data-line-start="130" data-line-end="131"><strong>数据来源的局限性</strong>：中国市场除了京东商城外，还有许多其他大型电商平台，如淘宝。然而，淘宝没有准确的评分系统，并且由于网站本身的特性，许多评论可能是默认或刷好评。因此，在本研究中，我没有采用与京东商城同样多的淘宝数据，这可能导致报告对美的空调在中国市场的表现和竞争力的评估存在偏差。</p>
+<li class="has-line-data" data-line-start="131" data-line-end="133">
+<p class="has-line-data" data-line-start="131" data-line-end="132"><strong>数据来源的局限性</strong>：中国市场除了京东商城外，还有许多其他大型电商平台，如淘宝。然而，淘宝没有准确的评分系统，并且由于网站本身的特性，许多评论可能是默认或刷好评。因此，在本研究中，我没有采用与京东商城同样多的淘宝数据，这可能导致报告对美的空调在中国市场的表现和竞争力的评估存在偏差。</p>
 </li>
-<li class="has-line-data" data-line-start="132" data-line-end="134">
-<p class="has-line-data" data-line-start="132" data-line-end="133"><strong>社交媒体数据缺失</strong>：本研究主要关注电商网站上的评论数据，但没有涵盖社交媒体平台上的用户反馈。社交媒体数据可能包含了更多关于用户对美的空调的看法和需求，因此忽略这部分数据可能会影响对市场的全面了解。</p>
+<li class="has-line-data" data-line-start="133" data-line-end="135">
+<p class="has-line-data" data-line-start="133" data-line-end="134"><strong>社交媒体数据缺失</strong>：本研究主要关注电商网站上的评论数据，但没有涵盖社交媒体平台上的用户反馈。社交媒体数据可能包含了更多关于用户对美的空调的看法和需求，因此忽略这部分数据可能会影响对市场的全面了解。</p>
 </li>
-<li class="has-line-data" data-line-start="134" data-line-end="136">
-<p class="has-line-data" data-line-start="134" data-line-end="135"><strong>选择性偏差</strong>：用户发表评论的行为可能存在选择性偏差，即满意或不满意的用户更可能发表评论。这可能导致我们获取的评论数据无法完全代表所有用户的观点，从而影响分析结果的准确性。</p>
+<li class="has-line-data" data-line-start="135" data-line-end="137">
+<p class="has-line-data" data-line-start="135" data-line-end="136"><strong>选择性偏差</strong>：用户发表评论的行为可能存在选择性偏差，即满意或不满意的用户更可能发表评论。这可能导致我们获取的评论数据无法完全代表所有用户的观点，从而影响分析结果的准确性。</p>
 </li>
-<li class="has-line-data" data-line-start="136" data-line-end="138">
-<p class="has-line-data" data-line-start="136" data-line-end="137"><strong>情感分析工具的局限性</strong>：虽然情感分析工具在一定程度上能够识别评论的情感倾向，但它们可能无法准确捕捉一些含蓄、讽刺或复杂的表达。</p>
+<li class="has-line-data" data-line-start="137" data-line-end="139">
+<p class="has-line-data" data-line-start="137" data-line-end="138"><strong>情感分析工具的局限性</strong>：虽然情感分析工具在一定程度上能够识别评论的情感倾向，但它们可能无法准确捕捉一些含蓄、讽刺或复杂的表达。</p>
 </li>
 </ol>
-<h3 class="code-line" data-line-start="138" data-line-end="139"><a id="9__138"></a>9. 相关文件链接</h3>
+<h3 class="code-line" data-line-start="139" data-line-end="140"><a id="9__139"></a>9. 相关文件链接</h3>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
